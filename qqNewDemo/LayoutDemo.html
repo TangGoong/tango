@@ -20,13 +20,12 @@
 		border-bottom-width: 1px;
 	}
 	.Top{
-		height:400px;
+		height:200px;
 		background-color: white;
 	}
 	.main{
 		float: left;
 		width:70%;
-		height:650px;
 		background-color: white;
 	}
 	.right-nav{
@@ -42,6 +41,9 @@
 		background-color: #F6F6F6;
 		border-top-style: inset;
 		border-top-width: 1px;
+	}
+	a{
+		text-decoration: none;
 	}
 	.sitenav ul{
 		list-style-type: none;
@@ -61,7 +63,7 @@
 		font-size: 9px;
 		color: gray ;
 		padding: 8px 8px;
-		text-decoration: none;
+		
 	}
 	.sitenav li a,.morebtnpart2{
 		display: inline-block;
@@ -69,7 +71,6 @@
 		font-size: 9px;
 		color: gray ;
 		padding: 8px 8px;
-		text-decoration: none;
 	}
 	.dropdown-contentpart1{
 		display: none;
@@ -89,7 +90,6 @@
 		font-size: 9px;
 		color: gray ;
 		padding: 8px 8px;
-		text-decoration: none;
 
 	}
 	.dropdown-contentpart2 a{
@@ -98,7 +98,6 @@
 		font-size: 9px;
 		color: gray ;
 		padding: 8px 8px;
-		text-decoration: none;
 
 	}
 	.dropdown-contentpart1 a:hover{
@@ -114,7 +113,7 @@
 	.sitenav{
 		float: left;
 		position: relative;
-		left: 20%;
+		left: 15%;
 	}
 	.dropdownpart1{
 		display: inline-block;
@@ -159,7 +158,7 @@
 	.brand{
 		margin:auto;
 		margin-top: 10px;
-		width:60%;
+		width:70%;
 	}
 	.top-nav{
 		width: 100%;
@@ -186,7 +185,6 @@
 		
 		color: black;
 		padding: 10px 11px;
-		text-decoration: none;
 
 	}
 	.top-nav li:hover{
@@ -206,7 +204,72 @@
 	
 	.top-navli{
 		position: relative;
-		left: 20%;
+		left: 15%;
+	}
+
+	.content{
+		position: relative;
+		left: 21%;
+	}
+	.content div{
+		height:80px;
+		width: 75%;
+		border-bottom: 1px solid #F5F5F5;
+		margin: 0;
+		padding-top: 20px;
+		padding-bottom: 16px;
+
+	}
+	.content div:hover{
+		background-color: #F5F5F5;
+	}
+	.content a{
+		text-decoration: none;
+	}
+	.content a:hover{
+		color: red;
+	}
+	.content div{
+		position: relative;
+	}
+	.content span a{
+		position: relative;
+		color: black;
+		top:-50px;
+		left:10px;
+		font-size: 20px; 
+	}
+	.right-nav div{
+		background-color: #F7F7F7;
+		width: 63%;
+	}
+	.etitle h3{
+		float: left;
+		position: relative;
+		top: 10px;
+		height: 20px;
+		border-left: 4px solid #e23838;
+	}
+	.etitle a{
+		display: block;
+		background-image: url(jrhtLogo.png);
+		position: absolute;
+		bottom: -5px;
+		left: 8px;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		overflow: hidden;
+		text-indent: -999px;
+		width: 166px;
+		height: 33px;
+	}
+	.con{
+
+		margin-top: 16px;
+		padding: 0 12px 12px;
+	}
+	.con a{
+		font-size: 16px;
 	}
 </style>
 <body>
@@ -280,10 +343,56 @@
     <div class="wrap">
     	<div class="main">
 			<div class="content">
-				<div> </div>
+				<div>
+					<a href=""><h2>打前站｜习主席到访前，带你解码西班牙</h2></a>
+					<ul>
+						<li><a href="#">习近平出访欧洲拉美四国并出席2018年G20峰会前瞻</a></li>
+						<li><a href="#">习近平谈自贸区建设</a></li>
+					</ul>
+				</div>
+				
+				<div>
+					<span>
+						<img src="1.jpg" width="110" height="80">
+						<a href="#">王毅带队 中印边界谈判首次提到这四个字</a>
+					</span>
+				</div>
+				<div>
+					<span>
+						<img src="2.jpg" width="110" height="80">
+						<a href="#">广电总局：对高价片酬、收视率造假等加大惩戒</a>
+					</span>
+				</div>
+				<div>
+					<span>
+						<img src="3.jpg" width="110" height="80">
+						<a href="#">沙特王储中东和G20之行释放哪些信号？</a>
+					</span>
+				</div>
+				<div>
+					<span>
+						<img src="4.jpg" width="110" height="80">
+						<a href="#">央视网新闻：基因编辑婴儿引争议 权威专家这样说</a>
+					</span>
+				</div>
+				<div>
+					<span>
+						<img src="5.jpg" width="110" height="80">
+						<a href="#">女子自曝被堂姐顶替上大学 谁才是参加考试的人？</a>
+					</span>
+				</div>
 			</div>
     	</div>
-    	<div class="right-nav"></div>
+    	<div class="right-nav">
+    		<div>
+    			<div class="etitle">  				
+    				<h3><a href="#">今日话题</a></h3>
+    			</div>
+    			<div class="con">
+    				<a href="#">索要21亿国家赔偿，合不合理</a>
+    			</div>
+    		</div>
+    	</div>
     </div>
     <div class="footer"></div>
 </body>
