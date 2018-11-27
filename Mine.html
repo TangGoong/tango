@@ -1,0 +1,293 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>扫雷游戏</title>
+
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+p {
+    position: absolute;
+    left: 65%;
+    top: 10%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#times {
+    text-align: center;
+    font-size: 20px;
+	
+}
+
+#mine_map {
+    margin: 0 auto;
+    border: 1px solid skyblue;
+}
+/*行样式*/
+.row {
+    height: 20px;
+}
+/*列样式*/
+.col {
+    height: 20px;
+    width: 20px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    background: rgb(230, 230, 230);
+    float: left;
+}
+
+.colactive {
+    height: 20px;
+    width: 20px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    background: rgb(250, 250, 250);
+    float: left;
+}
+
+.activeMine {
+    background: black;
+}
+
+
+#Start {
+    margin-left: 31%;
+    border: 1px solid skyblue;
+    color: white;
+    background: skyblue;
+    width: 50px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#Refresh{
+    border: 1px solid skyblue;
+    background: skyblue;
+    color: white;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 12%;
+}
+</style>
+
+
+</head>
+ <body>
+    <div class="wrap">
+      <h1>扫雷游戏</h1>
+      <!-- 记录 -->
+      <p style="font-size:20px;color:red;margin-left: -3%;"> time:<span id="times" style="color:black">&nbsp0&nbsp秒</span> </p>
+      <!-- 开始按钮 -->
+      <input id="Start" type="button" name="name" value="开始" onclick="startcount()">
+      <!-- 刷新(重新开始游戏) -->
+      <input id="Refresh" type="button" name="name" value="重开">
+      <!-- 地图 -->
+      <div id="mine_map">
+
+      </div>
+    </div>
+  </body>
+
+  
+<script type="text/javascript">
+//获取时间标签
+var times = document.getElementById('times');
+// 获取地图标签
+var map = document.getElementById('mine_map');
+// 为了灵活的设置地图的大小,以下设置两个变量
+// 用于存储行数和列数(即方格的个数)
+var rowNumber = 16;// 行数
+var columnNumber = 16;// 列数;
+var mineNum=40;//雷数
+var mapWidth = columnNumber * 20 + 'px';// 地图的宽
+var mapHeight = rowNumber * 20 + 'px';// 地图的高
+map.style.width = mapWidth;
+map.style.height = mapHeight;// 设置地图宽高
+// 创建一个二维数组,用来记录地图上的所有div的位置
+var mineDIVPosition = [];
+var minePosition=[];
+for (var i=0;i<rowNumber;i++){
+					var col=[];
+					for(var j=0;j<columnNumber;j++){
+					    col[j]='e';
+					}
+					minePosition[i]=col;
+}
+// 通过双层for循环来创建地图元素
+for ( var i = 0; i < rowNumber; i++) {
+    // 创建行div
+    var rowDIV = document.createElement('div');
+    // 设置div样式
+    rowDIV.className = 'row';
+    // 将行div添加到路径地图map中
+    map.appendChild(rowDIV);
+    // 创建一个行级数组,用来存储当前行中的每个方块div
+    var rowArray = [];
+    for ( var j = 0; j < columnNumber; j++) {
+        // 创建每一行中的方块div
+        var columnDIV = document.createElement('div');
+        // 设置css样式
+        columnDIV.className = 'col';
+        // 将方块DIV添加到当前行中
+        rowDIV.appendChild(columnDIV);
+        // 同时将方块添加到行数组中
+        rowArray.push(columnDIV);
+    }
+    // 当前内层循环结束,将行数组添加到二维数组中
+    mineDIVPosition.push(rowArray);
+}
+// 开始布雷
+function createMine() {
+    var tRow,tCol,mark=true,i=0;
+		for(;i<mineNum;){
+			tRow=Math.floor(Math.random()*(rowNumber));
+			tCol=Math.floor(Math.random()*(columnNumber));
+			if(minePosition[tRow][tCol]=='e'){
+				minePosition[tRow][tCol]="m";
+				i++;
+			}
+		}   
+};
+// 显示全部雷
+function findallMine() {    
+	for(var i=0;i<rowNumber;i++){
+		for(var j=0;j<columnNumber;j++){
+			
+			if(minePosition[i][j]=="m")
+			mineDIVPosition[i][j].className = 'col activeMine';
+		}
+	}	
+};
+//给每个div添加事件
+function setOnclick(){
+	for (var i=0;i<rowNumber;i++)
+	{
+		for ( var j = 0; j < columnNumber;j++) {
+				mineDIVPosition[i][j].onclick=function(num,mineActive,col,row){
+						num=minePosition[i][j];
+						mineActive=mineDIVPosition[i][j];
+						row=i;
+						col=j;
+						console.log(num);
+						return function(){
+							if(num=="m"){
+								clickMine(mineActive);
+							}else{
+								checkMineNum(row,col);
+							}
+						}
+						
+				}(i,j);
+				mineDIVPosition[i][j].addEventListener('touchstart', function(e,num,mineActive,col,row){
+						num=minePosition[i][j];
+						mineActive=mineDIVPosition[i][j];
+						row=i;
+						col=j;
+						console.log(num);
+						return function(){
+							if(num=="m"){
+								clickMine(mineActive);
+							}else{
+								checkMineNum(row,col);
+							}
+						}
+				}(i,j), false);
+
+		}
+	}
+};
+//踩到雷事件
+function clickMine(mineActive){
+	alert("你踩到雷了！！!");
+	clearTimeout(x);
+	findallMine();
+};
+//扫描非雷区并显示雷个数
+function checkMineNum(row,col){	
+			// 点到非炸弹区域 可能是数字区域也可能是空白区域
+                var count = 0;
+                // 将该点的周围全部访问
+                for (var i = -1; i < 2; i++) {
+                    for (var j = -1; j < 2; j++) {
+                        // 遍历到自己
+                        if (i == 0 && j == 0)
+                            continue;
+                        var r = row + i, c = col + j;
+                        // 遍历超出边界
+                        if (r < 0 || r >= rowNumber || c < 0 || c < 0 || c >= columnNumber)
+                            continue;
+                        // 发现有炸弹
+                        if (minePosition[r][c] == 'm'){
+						
+                            count++;
+						}
+                    }
+                }
+                // 如果周围有炸弹则这个区域不是空白区域 停止DFS
+                if (count > 0) {
+                    // 该区域周围的炸弹数量就是该区域的数字大小
+					mineDIVPosition[row][col].className='colactive';
+                    mineDIVPosition[row][col].innerHTML = count;
+                } else {
+					 // 周围无炸弹 是空白区域
+					 mineDIVPosition[row][col].className='colactive';
+                     mineDIVPosition[row][col].innerHTML = '';
+					 minePosition[row][col]='d'
+                    // 遍历此区域周围区域
+					for (var i = -1; i < 2; i++) {
+						for (var j = -1; j < 2; j++) {
+							if (i == 0 && j == 0)
+								continue;
+							var r = row + i, c = col + j;
+							if (r < 0 || r >= rowNumber || c < 0 || c >= columnNumber)
+								continue;
+							// 遇到没有访问的区域 开始递归访问
+							if (minePosition[r][c] != 'd'){
+								
+								arguments.callee(r,c);
+							}
+						}
+					}
+                }
+};
+var i = 0;//定义从0开始计数
+var x;//定义用来保存定时器
+var isstart = 1;//用来判断是否用户点击了开始
+function counttime(){//计数的方法
+	i++;
+	times.innerHTML = "&nbsp"+i+"&nbsp秒";
+	clearTimeout(x);
+	x = setTimeout("counttime()",1000);//不能加var
+}
+function startcount() {//当用户点击了开始之后，再次点击开始将无效
+	if (isstart == 1) {
+		isstart = 0;
+		createMine();
+		setOnclick();
+		setTimeout("counttime()",1000);
+	}
+}
+var refresh = document.getElementById('Refresh');
+// 添加刷新按钮
+refresh.onclick = function() {
+    window.location.reload();
+};
+</script>
+</html>
