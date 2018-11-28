@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>Examples</title>
 <meta name="description" content="">
+
 <meta name="keywords" content="">
 <link href="" rel="stylesheet">
 </head>
@@ -13,6 +14,7 @@
 		margin: 0;
 		padding: 0;
 	}
+
 	.header{
 		height: 30px;
 		background-color: #F9F7F7;
@@ -21,18 +23,15 @@
 	}
 	.Top{
 		height:200px;
-		background-color: white;
 	}
 	.main{
 		float: left;
-		width:60%;
-		background-color: white;
+		width:65%;
 	}
 	.right-nav{
 		float: left;
 		width: 30%;
 		height: 650px;
-		background-color: white;
 	}
 	.footer{
 		float: left;
@@ -77,12 +76,14 @@
 		position: absolute;
 		width: 80px;
 		background-color: white;
+		z-index: 1;
 	}
 	.dropdown-contentpart2{
 		display: none;
 		position: absolute;
 		width: 80px;
 		background-color: white;
+		z-index: 1;
 	}
 	.dropdown-contentpart1 a{
 		display: block;
@@ -113,7 +114,7 @@
 	.sitenav{
 		float: left;
 		position: relative;
-		left: 20%;
+		left: 15%;
 	}
 	.dropdownpart1{
 		display: inline-block;
@@ -121,7 +122,7 @@
 	.dropdownpart2{
 		display: inline-block;
 	}
-	a:hover{
+	.sitenav a:hover{
 		color: black;
 	}
 	.dropdownpart1:hover .dropdown-contentpart1 {
@@ -156,9 +157,11 @@
 	}
 
 	.brand{
-		margin:auto;
+		position: relative;
+		left: 15%;
 		margin-top: 10px;
-		width:60%;
+		width:55%;
+		z-index: -1;
 	}
 	.top-nav{
 		width: 100%;
@@ -167,6 +170,7 @@
 		border-top-style: solid;
 		border-top-width: 3px;
 		box-shadow: 1px 1px 2px #aaaaaa;
+
 
 	}
 	.top-nav ul{
@@ -179,12 +183,14 @@
 		float:left;
 		width: 73px;
 		text-align: center;
+
 	}
 	.top-nav li a{
 		display: inline-block;
 		
 		color: black;
 		padding: 10px 11px;
+
 
 	}
 	.top-nav li:hover{
@@ -204,16 +210,17 @@
 	
 	.top-navli{
 		position: relative;
-		left: 20%;
+		left: 15%;
+		z-index: 0;
 	}
 
 	.content{
 		position: relative;
-		left: 33%;
+		left: 23%;
 	}
 	.content div{
 		height:80px;
-		width: 70%;
+		width: 76%;
 		border-bottom: 1px solid #F5F5F5;
 		margin: 0;
 		padding-top: 20px;
@@ -245,25 +252,23 @@
 		left:10px;
 		font-size: 20px; 
 	}
-	.right-nav {
-		
-		position: relative;
-		padding-left: 38px;
-
-	}
-	.right-nav .today{
-		padding-top: 0;
-		background-color: #F7F7F7;
-		width: 60%;
-		right: 25%;
+	.today{
+		padding-left: 30px;
+		padding-bottom: 20px;
+		width: 72%;
 	}
 	.etitle-top {
 		
 		height: 50px;
+
+	}
+	.etitle-top,.con{
+		background-color: #F7F7F7;
 	}
 	.etitle{
 		float: left;
 		padding-top: 10px;
+
 	}
 	.etitle-top a{
 		position: relative;
@@ -271,12 +276,12 @@
 		font-size: 15px;
 		top: 10px;
 	}
-	.etitle h3{
+	.etitle-top .etitle h3{
 		height: 20px;
 		border-left: 4px solid #e23838;
 
 	}
-	.etitle h3 a{
+	.etitle-top .etitle h3 a{
 		display: block;
 		position: relative;
 		top:-2px;
@@ -289,27 +294,34 @@
 		width: 133px;
 		height: 33px;
 	}
-	.con a{
-		color: black;
-	}
 	.con a:hover{
 		color: red;
 	}
+	.con a{	
+		color: black;
+	}
+	
+	
 	.con-title{
 		position: relative;
 		left: 15px;
 		height: 30px;
 	}
 	.con-title a{
-		
+
 	}
 	.pic{
 		position: relative;
 		left: 15px;
 		float: left;
+
+
 	}
 	.con-detail{
+
 		height: 90px
+	
+
 	}
 	.con-detail p{
 		position: relative;
@@ -322,16 +334,44 @@
 	.con-li{
 		padding-left: 15px;
 		padding-bottom: 25px;
+
 	}
 	.con-li li{
 		list-style: none;
-		padding:5px 5px 1px 14px;
 		background: url(icons.png) 0 -1132px no-repeat;
+		padding:5px 5px 1px 14px;
+
 	}
 	.con-li a{
-		
 		color: black;
 		font-size: 13px;
+	}
+	.yxl{
+		padding-left: 30px;
+		
+	}
+	.yxl .etitle {
+		width: 290px;
+		background-color: #F7F7F7;
+
+	}
+	.yxl .etitle h3{
+		height: 20px;
+		border-left: 4px solid #e23838;
+
+	}
+	.yxl .etitle h3 a{
+		display: block;
+		position: relative;
+		top:-2px;
+		left: 10px;
+		background-image: url(yxl.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		overflow: hidden;
+		text-indent: -999px;
+		width: 133px;
+		height: 33px;
 	}
 </style>
 <body>
@@ -455,28 +495,33 @@
     			</div>
     			<div class="con">
     				<div class="con-title">
-    				<a href="#">索要21亿国家赔偿，合不合理</a>
-    			</div>
-    			<div class="pic">
-    				<img src="6.jpg" width="110" height="80">
-    			</div>
-    			<div class="con-detail">
-    				<p>
-    					法律不支持，不代表索赔要求不合理，更不代表企业的损失不存在。
-						<a href="#">[详细]</a>
-    				</p>
-    			</div>
-    			<div class="con-li">
-    				<ul>
-    					<li><a href="#">学生再成免费劳力，职校“实践教学”亟待...</a></li>
-    					<li><a href="#">守护员专座，不如点个赞</a></li>
-    					<li><a href="#">高考英语“倒加分”：不能以公平之名制...</a></li>
-    				</ul>
-    			</div>
-    			</div>
-    			
+    					<a href="#">索要21亿国家赔偿，合不合理</a>
+    				</div>
+	    			<div class="pic">
+	    				<img src="6.jpg" width="110" height="80">
+	    			</div>
+	    			<div class="con-detail">
+	    				<p>
+	    					法律不支持，不代表索赔要求不合理，更不代表企业的损失不存在。
+							<a href="#">[详细]</a>
+	    				</p>
+	    			</div>
+	    			<div class="con-li">
+	    				<ul>
+	    					<li><a href="#">学生再成免费劳力，职校“实践教学”亟待...</a></li>
+	    					<li><a href="#">守护员专座，不如点个赞</a></li>
+	    					<li><a href="#">高考英语“倒加分”：不能以公平之名制...</a></li>
+	    				</ul>
+	    			</div> 
+	    		</div>   			
+    		</div>
+    		<div class="yxl">    		
+	    		<div class="etitle">  				
+	    			<h3><a href="#">影像力</a></h3>
+	    		</div>
     		</div>
     	</div>
+    	
     </div>
     <div class="footer"></div>
 </body>
