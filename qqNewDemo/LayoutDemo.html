@@ -25,7 +25,7 @@
 	}
 	.main{
 		float: left;
-		width:70%;
+		width:60%;
 		background-color: white;
 	}
 	.right-nav{
@@ -57,7 +57,7 @@
 
 	}
 	
-	.sitenav li a,.morebtnpart1{
+	.sitenav li a,.morebtnpart1 {
 		display: inline-block;
 		text-align: center;
 		font-size: 9px;
@@ -113,7 +113,7 @@
 	.sitenav{
 		float: left;
 		position: relative;
-		left: 15%;
+		left: 20%;
 	}
 	.dropdownpart1{
 		display: inline-block;
@@ -158,7 +158,7 @@
 	.brand{
 		margin:auto;
 		margin-top: 10px;
-		width:70%;
+		width:60%;
 	}
 	.top-nav{
 		width: 100%;
@@ -204,16 +204,16 @@
 	
 	.top-navli{
 		position: relative;
-		left: 15%;
+		left: 20%;
 	}
 
 	.content{
 		position: relative;
-		left: 21%;
+		left: 33%;
 	}
 	.content div{
 		height:80px;
-		width: 75%;
+		width: 70%;
 		border-bottom: 1px solid #F5F5F5;
 		margin: 0;
 		padding-top: 20px;
@@ -223,14 +223,20 @@
 	.content div:hover{
 		background-color: #F5F5F5;
 	}
-	.content a{
-		text-decoration: none;
-	}
+	
 	.content a:hover{
 		color: red;
 	}
-	.content div{
-		position: relative;
+	.content>div h2{
+		color: black;
+	}
+	.content>div li{
+		list-style: none;
+		background: url(icons.png) 0 -1132px no-repeat;
+		padding:5px 5px 1px 14px;
+	}
+	.content>div li a{		
+		color: gray;
 	}
 	.content span a{
 		position: relative;
@@ -239,37 +245,93 @@
 		left:10px;
 		font-size: 20px; 
 	}
-	.right-nav div{
+	.right-nav {
+		
+		position: relative;
+		padding-left: 38px;
+
+	}
+	.right-nav .today{
+		padding-top: 0;
 		background-color: #F7F7F7;
-		width: 63%;
+		width: 60%;
+		right: 25%;
+	}
+	.etitle-top {
+		
+		height: 50px;
+	}
+	.etitle{
+		float: left;
+		padding-top: 10px;
+	}
+	.etitle-top a{
+		position: relative;
+		color: gray;
+		font-size: 15px;
+		top: 10px;
 	}
 	.etitle h3{
-		float: left;
-		position: relative;
-		top: 10px;
 		height: 20px;
 		border-left: 4px solid #e23838;
+
 	}
-	.etitle a{
+	.etitle h3 a{
 		display: block;
+		position: relative;
+		top:-2px;
+		left: 10px;
 		background-image: url(jrhtLogo.png);
-		position: absolute;
-		bottom: -5px;
-		left: 8px;
 		background-repeat: no-repeat;
 		background-position: 0 0;
 		overflow: hidden;
 		text-indent: -999px;
-		width: 166px;
+		width: 133px;
 		height: 33px;
 	}
-	.con{
-
-		margin-top: 16px;
-		padding: 0 12px 12px;
-	}
 	.con a{
-		font-size: 16px;
+		color: black;
+	}
+	.con a:hover{
+		color: red;
+	}
+	.con-title{
+		position: relative;
+		left: 15px;
+		height: 30px;
+	}
+	.con-title a{
+		
+	}
+	.pic{
+		position: relative;
+		left: 15px;
+		float: left;
+	}
+	.con-detail{
+		height: 90px
+	}
+	.con-detail p{
+		position: relative;
+		left: 30px;
+		padding:5px 40px 5px ;
+		color: gray;
+		font-size: 14px;
+	}
+	
+	.con-li{
+		padding-left: 15px;
+		padding-bottom: 25px;
+	}
+	.con-li li{
+		list-style: none;
+		padding:5px 5px 1px 14px;
+		background: url(icons.png) 0 -1132px no-repeat;
+	}
+	.con-li a{
+		
+		color: black;
+		font-size: 13px;
 	}
 </style>
 <body>
@@ -384,13 +446,35 @@
 			</div>
     	</div>
     	<div class="right-nav">
-    		<div>
-    			<div class="etitle">  				
-    				<h3><a href="#">今日话题</a></h3>
+    		<div class="today">
+    			<div class="etitle-top">
+    				<div class="etitle">  				
+    					<h3><a href="#">今日话题</a></h3>
+    				</div>
+    				<a href="#">全新奥迪A8L</a>
     			</div>
     			<div class="con">
+    				<div class="con-title">
     				<a href="#">索要21亿国家赔偿，合不合理</a>
     			</div>
+    			<div class="pic">
+    				<img src="6.jpg" width="110" height="80">
+    			</div>
+    			<div class="con-detail">
+    				<p>
+    					法律不支持，不代表索赔要求不合理，更不代表企业的损失不存在。
+						<a href="#">[详细]</a>
+    				</p>
+    			</div>
+    			<div class="con-li">
+    				<ul>
+    					<li><a href="#">学生再成免费劳力，职校“实践教学”亟待...</a></li>
+    					<li><a href="#">守护员专座，不如点个赞</a></li>
+    					<li><a href="#">高考英语“倒加分”：不能以公平之名制...</a></li>
+    				</ul>
+    			</div>
+    			</div>
+    			
     		</div>
     	</div>
     </div>
