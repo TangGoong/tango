@@ -9,10 +9,14 @@
 <meta name="keywords" content="">
 <link href="" rel="stylesheet">
 </head>
-<style type="text/css">
+<style type="text/css"> 
+
 	*{
 		margin: 0;
 		padding: 0;
+	}
+	body{
+		min-width: 1024px;
 	}
 
 	.header{
@@ -26,12 +30,13 @@
 	}
 	.main{
 		float: left;
-		width:1030px;
+		width:65%;
 	}
 	.right-nav{
 		float: left;
 		width: 30%;
 		height: 650px;
+		padding-left: 10px;
 	}
 	.footer{
 		float: left;
@@ -113,7 +118,7 @@
 	.sitenav{
 		float: left;
 		position: relative;
-		left: 350px;
+		left: 15%;
 	}
 	.dropdownpart1{
 		display: inline-block;
@@ -157,7 +162,7 @@
 
 	.brand{
 		position: relative;
-		left: 350px;
+		left: 15%;
 		margin-top: 10px;
 		width:600px;
 		z-index: -1;
@@ -209,14 +214,14 @@
 	
 	.top-navli{
 		position: relative;
-		left: 350px;
+		left: 15%;
 		width: 1000px;
 		z-index: 0;
 	}
 
 	.content{
 		position: relative;
-		left: 350px;
+		left:22%;
 	}
 	.content div{
 		height:80px;
@@ -337,15 +342,18 @@
 
 	}
 	.con-li li{
-		position: relative;
+		position:relative;
 		list-style: none;
 		background: url(icons.png) 0 -1132px no-repeat;
 		padding:5px 5px 1px 14px;
 
+
 	}
 	.con-li a{
+
 		color: black;
 		font-size: 13px;
+
 	}
 	.yxl{
 		padding-left: 15px;
@@ -357,9 +365,8 @@
 
 	}
 	.yxl .etitle h3{
-		height: 20px;
+		height: 25px;
 		border-left: 4px solid #e23838;
-
 	}
 	.yxl .etitle h3 a{
 		display: block;
@@ -374,19 +381,42 @@
 		width: 133px;
 		height: 33px;
 	}
-	.yxl .pics{
+	.yxl>.pics{
+		position: relative;
 		width: 300px;
-		height: 250px;
+		height: 300px;
 		background-color: #F7F7F7;
-
+		
+		overflow: hidden;
+	}
+	.yxl >.pics>.pic>a>img{
+		float: left;
+		width: 300px;
+		height: 200px;
+	}
+	#photo{
+		position: absolute;
+		width: calc(300px*5);
 	}
 	.yxl >.pics> .pic{
 		position: relative;
-		top:10px;
-		width: 250px;
+		left: 0;
+		top:15px;
+		width: 300px;
 		height: 200px;
-		background-image: url(ninja154345082646204.jpg);
+
+		animation: ma 20s ease-out infinite normal;
 	}
+
+	@keyframes ma {/*---每图片切换有两个阶段：位移切换和静置。中间的效果可以任意定制----*/
+			0%,20% {		margin-left: 0px;		}
+			25%,40% {		margin-left: -300px;	}
+			45%,60% {		margin-left: -600px;	}
+			65%,80% {		margin-left: -900px;	}
+			85%,100% {		margin-left: -1200px;	}
+	}
+	
+	
 
 </style>
 <body>
@@ -535,12 +565,20 @@
 	    			<h3><a href="#">影像力</a></h3>
 	    		</div>
 	    		<div class="pics">  				
-	    			<div class="pic"></div>
+	    			<div class="pic" id="photo">
+	    				<a href="#"><img src="ninja154345082646204.jpg"></a>
+	    				<a href="#"><img src="ninja154345079851251.jpg"></a>
+	    				<a href="#"><a href="#"><img src="ninja154345079851252.jpg"></a>
+	    				<a href="#"><img src="ninja154345082646203.jpg"></a>
+	    				<a href="#"><img src="ninja154346578633696.jpg"></a>
+	    			</div>
 	    		</div>
     		</div>
     	</div>
     	
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+    	
+    </div>
 </body>
 </html>
